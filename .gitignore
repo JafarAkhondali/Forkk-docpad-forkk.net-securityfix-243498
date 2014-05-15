@@ -1,0 +1,13 @@
+# Stupid npm bullshit...
+node_modules
+*/node_modules
+
+# Docpad stuff
+docpad/.docpad.db
+docpad/out
+
+# Generated files
+last_commit.html
+dist/
+*/dist
+

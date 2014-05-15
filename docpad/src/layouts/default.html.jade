@@ -1,0 +1,53 @@
+doctype 5
+html(lang="en")
+    head
+        title=document.title
+        // TODO: Favicon
+        //link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
+        link(rel="stylesheet", href="/assets/css/uikit.forkk.min.css")
+        link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Droid+Sans")
+        script var _sf_startpt=(new Date()).getTime()
+    body
+        .uk-navbar.uk-navbar-attached
+            .uk-container.uk-container-center.uk-margin-top.uk-margin-bottom
+                a(href="/").uk-navbar-brand
+                    //img(src="/images/icon32.png", alt="Forkk").uk-float-left
+                    h1.top-bar.uk-float-left.uk-margin-top-remove.uk-margin-bottom-remove.uk-margin-left
+                        | Forkk.net
+                        small.uk-h2.uk-margin-left #{site.description}
+
+        .uk-container.uk-container-center.uk-margin-top
+            .uk-grid(data-uk-grid-margin)
+
+                // Navbar
+                mixin navEntry(title, url)
+                    li(class=document.url == url ? "uk-active" : "")
+                        a(href=url) #{title}
+
+                .uk-width-medium-1-4
+                    .uk-panel.uk-panel-box
+                        h3.uk-panel-title Navigation
+                        ul.uk-nav.uk-nav-side(data-uk-nav)
+                            // The homepage is special, since we want to link to "/", but its document.url will be "/index.html"
+                            li(class=document.url == "/index.html" ? "uk-active" : "")
+                                a(href="/") Home
+                            li.uk-nav-header Blog Posts
+                            each post in getFilesAtPath("posts").toJSON().sort(function(a,b) { return (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0); } ).slice(0, 20)
+                                +navEntry(post.title, post.url)
+
+                .uk-width-medium-3-4
+                    include ads/top.html
+                    article.uk-article!= content
+            hr
+            .uk-text-center
+                p
+                    | Copyright &copy; 2013-2014 Forkk
+                    br
+                    | Revision:
+                    include ../../../last_commit.html
+                    br
+                    a(href="https://github.com/Forkk/forkk.net/blob/master/LICENSE", target="_blank") License
+        script(src="/assets/js/analytics.js")
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+        script(src="/assets/js/uikit.min.js")
+

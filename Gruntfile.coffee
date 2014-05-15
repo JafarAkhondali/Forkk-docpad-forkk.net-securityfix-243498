@@ -8,15 +8,14 @@ module.exports = (grunt) ->
 	grunt.initConfig
 		pkg: pkginfo
 
-		banner: "/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - " +
-				"<%= grunt.template.today("yyyy-mm-dd") %>\n" +
-				"<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>" +
-				"* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;" +
-				" Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n",
-
 		copy:
 			uikit:
 				files: [
+					expand: true
+					cwd: "uikit/themes/custom/forkk/dist"
+					src: ["uikit.forkk.min.css"]
+					dest: "dist/assets/css"
+				,
 					expand: true
 					cwd: "uikit/dist/js"
 					src: ["uikit.min.js"]
@@ -37,6 +36,9 @@ module.exports = (grunt) ->
 					base: "dist"
 
 		exec:
+			githash:
+				command: "git rev-parse --verify HEAD > last_commit.html"
+
 			uikit:
 				cwd: "uikit"
 				command: "grunt"
@@ -62,6 +64,6 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks "grunt-exec"
 
 	# Default task.
-	grunt.registerTask("default", ["connect", "watch"])
-	grunt.registerTask("build", ["exec", "copy"])
+	grunt.registerTask "default", ["connect", "watch"]
+	grunt.registerTask "build", ["exec", "copy"]
 
