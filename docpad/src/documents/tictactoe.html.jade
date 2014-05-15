@@ -1,0 +1,19 @@
+---
+title: Tic-Tac-Toe - Forkk.net
+layout: default
+isPage: true
+---
+
+p This is a tic-tac-toe game written in JavaScript and HTML 5 with an AI that's pretty much unbeatable. You can also turn off the AI and play with a friend if you like.</p>
+
+.uk-panel.uk-panel-box.uk-text-center
+    h3#TTT_TurnDisplay
+    label
+        input#TTT_AutoAICheck(type="checkbox")
+        | Enable AI
+.uk-panel.uk-text-center.uk-margin-top
+    canvas#TTT_Canvas(style="position: relative;" data-bgcolor="#FFFFFF" data-fgcolor="#000000" width="400" height="400")
+
+script(src="assets/js/tictactoe.js")
+script $(document).ready(function() { OnInit(); });
+

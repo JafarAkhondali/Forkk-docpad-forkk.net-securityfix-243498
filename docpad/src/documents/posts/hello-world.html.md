@@ -15,11 +15,10 @@ You probably aren't wondering: "Forkk, what happened to your old blog which
 used to be here?" Well, I got rid of it. It was ugly and I didn't like it, so
 I started over. Bootstrap sucks anyway, UIKit is awesome. If you really want
 to access it, I've moved it to [oldsite.forkk.net](http://oldsite.forkk.net).
-All the links are broken, though, since they point at forkk.net. Here's a link
-to the [tic-tac-toe game](http://oldsite.forkk.net/tictactoe.html). It's
-probably the only reason you'd want to visit the old website. I'll be moving
-it over to this one when I decide to stop being lazy. I can procrastinate that
-later, though.
+All the links are broken, though, since they point at forkk.net. I don't know
+why you'd want to visit it anyway. The only thing on there that might be worth
+visiting is the tic-tac-toe game, which I've moved over to this site as well.
+You can find a link to it in the sidebar on the left.
 
 Anyway, I should probably write something about myself. I'm some crazy person
 who presses buttons on a computer repeatedly until the computer does things I

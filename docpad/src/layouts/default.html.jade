@@ -11,6 +11,7 @@ html(lang="en")
 
         link(rel="stylesheet", href="/assets/css/uikit.forkk.min.css")
         link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Droid+Sans")
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
         script var _sf_startpt=(new Date()).getTime()
     body
         .uk-navbar.uk-navbar-attached
@@ -40,6 +41,13 @@ html(lang="en")
                             each post in getFilesAtPath("posts").toJSON().sort(function(a,b) { return (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0); } ).slice(0, 20)
                                 +navEntry(post.title, post.url)
 
+                            li.uk-nav-header Social
+                            +navEntry("GitHub", "https://github.com/Forkk")
+                            +navEntry("Twitter", "https://twitter.com/Forkk13")
+
+                            li.uk-nav-header Other Things
+                            +navEntry("Tic-Tac-Toe", "/tictactoe.html")
+
                 .uk-width-medium-3-4
                     .uk-panel
                         include ads/top.html
@@ -53,7 +61,6 @@ html(lang="en")
                     include ../../../last_commit.html
                     br
                     a(href="https://github.com/Forkk/forkk.net/blob/master/LICENSE", target="_blank") License
-        script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
         script(src="/assets/js/uikit.min.js")
-        script(src="/assets/analytics.js")
+        script(src="/assets/js/analytics.js")
 
