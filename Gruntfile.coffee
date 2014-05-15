@@ -49,12 +49,16 @@ module.exports = (grunt) ->
 
 		watch:
 			uikit:
-				files: [ "uikit/src/**/*.less", "uikit/src/js/*.js" ]
+				files: [ "uikit/**/*.less", "uikit/js/*.js" ]
 				tasks: [ "exec:uikit", "copy:uikit" ]
 
 			docpad:
-		  		files: [ "docpad/src/**/*" ]
+				files: [ "docpad/src/**/*" ]
 				tasks: [ "exec:docpad", "copy:docpad" ]
+		uncss:
+			dist:
+				files:
+					"dist/assets/css/uikit.multimc.min.css": [ "dist/*.html" ]
 
 	# Load grunt tasks from NPM packages
 	grunt.loadNpmTasks "grunt-uncss"
