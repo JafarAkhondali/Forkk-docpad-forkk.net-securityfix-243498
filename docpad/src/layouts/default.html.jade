@@ -4,6 +4,11 @@ html(lang="en")
         title=document.title
         // TODO: Favicon
         //link(rel="shortcut icon", type="image/x-icon", href="/favicon.ico")
+        meta(author=site.author)
+        meta(description=site.description)
+        meta(generator="docpad")
+        meta(keywords="Forkk,programming,development,coding,C++,C,Haskell,Python,JavaScript,MultiMC,Minecraft,mods,Web development")
+
         link(rel="stylesheet", href="/assets/css/uikit.forkk.min.css")
         link(rel="stylesheet", href="http://fonts.googleapis.com/css?family=Droid+Sans")
         script var _sf_startpt=(new Date()).getTime()
@@ -13,17 +18,18 @@ html(lang="en")
                 a(href="/").uk-navbar-brand
                     //img(src="/images/icon32.png", alt="Forkk").uk-float-left
                     h1.top-bar.uk-float-left.uk-margin-top-remove.uk-margin-bottom-remove.uk-margin-left
-                        | Forkk.net
-                        small.uk-h2.uk-margin-left #{site.description}
+                        | #{site.title}
+                        small.uk-h2.uk-margin-left #{site.subtitle}
 
         .uk-container.uk-container-center.uk-margin-top
-            .uk-grid(data-uk-grid-margin)
+            .uk-grid(data-uk-grid-margin data-uk-grid-match="{target:'.uk-panel'}")
 
-                // Navbar
+                // Nav entry mixin
                 mixin navEntry(title, url)
                     li(class=document.url == url ? "uk-active" : "")
                         a(href=url) #{title}
 
+                // Navbar
                 .uk-width-medium-1-4
                     .uk-panel.uk-panel-box
                         h3.uk-panel-title Navigation
@@ -36,8 +42,9 @@ html(lang="en")
                                 +navEntry(post.title, post.url)
 
                 .uk-width-medium-3-4
-                    include ads/top.html
-                    article.uk-article!= content
+                    .uk-panel
+                        include ads/top.html
+                        article.uk-article!= content
             hr
             .uk-text-center
                 p

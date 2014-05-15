@@ -6,7 +6,8 @@ docpadConfig = {
 	templateData:
 		site:
 			title: "Forkk.net"
-			description: "<insert witty tagline here>"
+			subtitle: "Rants from a crazy programmer"
+			description: "Rants from a crazy programmer"
 			url: "http://forkk.net"
 			author: "Forkk"
 

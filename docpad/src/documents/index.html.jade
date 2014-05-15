@@ -4,5 +4,15 @@ layout: "default"
 isPage: true
 ---
 
-h1 Hello World
+// Show a list of posts and summaries.
+// TODO: Add pagination.
+// TODO: Truncate post content to summary length.
+each post in getFilesAtPath("posts").toJSON().sort(function(a,b) { return (a.date > b.date) ? -1 : ((b.date > a.date) ? 1 : 0); } ).slice(0, 20)
+    article.uk-article
+        h2.heading-margin-top
+            a(href=post.url)= post.title
+        p.uk-article-meta Posted by #{post.author} on #{post.date}
+        div.uk-margin-top!= post.contentRenderedWithoutLayouts
+        p: a.uk-button(href=post.url) More...
+
 
