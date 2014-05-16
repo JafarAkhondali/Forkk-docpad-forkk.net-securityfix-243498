@@ -16,6 +16,10 @@ docpadConfig = {
     collections:
         posts: ->
             @getCollection("documents").findAllLive({relativeOutDirPath:"posts"},[date:-1])
+
+    regenerateDelay: 0
+    watchOptions:
+        catchupDelay: 0
     
     plugins:
         rss:
