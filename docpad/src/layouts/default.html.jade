@@ -23,7 +23,7 @@ html(lang="en")
                         small.uk-h3.uk-margin-left #{site.subtitle}
 
         .uk-container.uk-container-center.uk-margin-top
-            .uk-grid(data-uk-grid-margin data-uk-grid-match="{target:'.uk-panel'}")
+            .uk-grid(data-uk-grid-margin)
 
                 // Nav entry mixin
                 mixin navEntry(title, url)
@@ -62,8 +62,10 @@ html(lang="en")
                 p
                     | Copyright &copy; 2013-2014 Forkk
                     br
-                    | Revision:
-                    include ../../../last_commit.html
+                    i
+                        //- Trailing whitespace is necessary here to put a space between Revision: and the commit hash.
+                        | Revision: 
+                        include ../../../last_commit.html
                     br
                     a(href="https://github.com/Forkk/forkk.net/blob/master/LICENSE", target="_blank") License
         script(src="/assets/js/uikit.min.js")

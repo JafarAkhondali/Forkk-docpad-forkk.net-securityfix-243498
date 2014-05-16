@@ -24,8 +24,8 @@
 @nav-side-color:                                @global-color;
 @nav-side-hover-background:                     rgba(0,0,0,0.03);
 @nav-side-hover-color:                          @global-color;
-@nav-side-active-background:                    @global-primary-background;
-@nav-side-active-color:                         @global-contrast-color;
+@nav-side-active-background:                    @global-default-active-background;
+@nav-side-active-color:                         @global-color;
 @nav-side-header-color:                         @global-color;
 @nav-side-divider-border:                       @global-border;
 @nav-side-nested-color:                         @global-link-color;
@@ -62,7 +62,7 @@
 //
 
 @nav-side-hover-text-shadow:                    @global-text-shadow;
-@nav-side-active-text-shadow:                   @global-contrast-text-shadow;
+@nav-side-active-text-shadow:                   @global-text-shadow;
 
 @nav-dropdown-hover-text-shadow:                @global-contrast-text-shadow;
 
@@ -108,13 +108,13 @@
 
 // Hover
 .hook-nav-side-hover() {
-    box-shadow: inset 0 0 1px rgba(0,0,0,0.06);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
     text-shadow: 0 -1px 0 @nav-side-hover-text-shadow;
 }
 
 // Active
 .hook-nav-side-active() {
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
     text-shadow: 0 -1px 0 @nav-side-active-text-shadow;
 }
 
