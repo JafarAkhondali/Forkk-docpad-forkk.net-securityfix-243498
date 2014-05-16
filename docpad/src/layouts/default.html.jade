@@ -27,7 +27,10 @@ html(lang="en")
                 // Nav entry mixin
                 mixin navEntry(title, url)
                     li(class=document.url == url ? "uk-active" : "")
-                        a(href=url) #{title}
+                        a(href=url)
+                            if (attributes.iconClass)
+                                i(class!=attributes.iconClass)
+                            |  #{title}
 
                 // Navbar
                 .uk-width-medium-1-4
@@ -42,10 +45,11 @@ html(lang="en")
                                 +navEntry(post.title, post.url)
 
                             li.uk-nav-header Social
-                            +navEntry("GitHub", "https://github.com/Forkk")
-                            +navEntry("Twitter", "https://twitter.com/Forkk13")
+                            +navEntry("GitHub", "https://github.com/Forkk")(iconClass="uk-icon-github")
+                            +navEntry("Twitter", "https://twitter.com/Forkk13")(iconClass="uk-icon-twitter")
 
                             li.uk-nav-header Other Things
+                            +navEntry("MultiMC", "http://multimc.org")
                             +navEntry("Tic-Tac-Toe", "/tictactoe.html")
 
                 .uk-width-medium-3-4

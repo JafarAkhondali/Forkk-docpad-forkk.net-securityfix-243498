@@ -20,6 +20,11 @@ module.exports = (grunt) ->
 					cwd: "uikit/dist/js"
 					src: ["uikit.min.js"]
 					dest: "dist/assets/js"
+				,
+					expand: true
+					cwd: "uikit/dist/fonts"
+					src: ["*"]
+					dest: "dist/assets/fonts"
 				]
 			docpad:
 				files: [
