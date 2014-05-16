@@ -3,8 +3,7 @@ node_modules
 */node_modules
 
 # Docpad stuff
-docpad/.docpad.db
-docpad/out
+.docpad.db
 
 # Generated files
 last_commit.html

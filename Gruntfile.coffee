@@ -26,19 +26,6 @@ module.exports = (grunt) ->
 					src: ["*"]
 					dest: "dist/assets/fonts"
 				]
-			docpad:
-				files: [
-					expand: true
-					cwd: "docpad/out"
-					src: ["**/*.html", "**/*.ico", "**/*.png", "**/*.js", "**/*.xml", "**/*.css"]
-					dest: "dist"
-				]
-
-		connect:
-			server:
-				options:
-					port: 8082
-					base: "dist"
 
 		exec:
 			githash:
@@ -49,7 +36,6 @@ module.exports = (grunt) ->
 				command: "grunt"
 
 			docpad:
-				cwd: "docpad"
 				command: "docpad generate --env static"
 
 		watch:
@@ -57,9 +43,6 @@ module.exports = (grunt) ->
 				files: [ "uikit/**/*.less", "uikit/js/*.js" ]
 				tasks: [ "exec:uikit", "copy:uikit" ]
 
-			docpad:
-				files: [ "docpad/src/**/*" ]
-				tasks: [ "exec:docpad", "copy:docpad" ]
 		uncss:
 			dist:
 				files:
@@ -73,6 +56,8 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks "grunt-exec"
 
 	# Default task.
-	grunt.registerTask "default", ["connect", "watch"]
+	grunt.registerTask "default", ["build"]
 	grunt.registerTask "build", ["exec", "copy"]
+	grunt.registerTask "uikit", ["exec:uikit", "copy:uikit"]
+	#grunt.registerTask "default", ["connect", "watch"]
 

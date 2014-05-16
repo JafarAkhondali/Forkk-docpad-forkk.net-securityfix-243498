@@ -65,9 +65,10 @@ html(lang="en")
                     i
                         //- Trailing whitespace is necessary here to put a space between Revision: and the commit hash.
                         | Revision: 
-                        include ../../../last_commit.html
+                        include ../../last_commit.html
                     br
                     a(href="https://github.com/Forkk/forkk.net/blob/master/LICENSE", target="_blank") License
         script(src="/assets/js/uikit.min.js")
         script(src="/assets/js/analytics.js")
+        != getBlock("scripts").toHTML()
 
