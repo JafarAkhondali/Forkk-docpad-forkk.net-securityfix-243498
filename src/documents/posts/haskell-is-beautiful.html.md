@@ -2,7 +2,7 @@
 layout: post
 title: Haskell is Beautiful
 author: Forkk
-date: 1400355070000
+date: 1400362048000
 ---
 
 Haskell is probably one of my favorite programming languages, but
