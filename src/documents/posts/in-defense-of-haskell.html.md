@@ -2,10 +2,10 @@
 layout: post
 title: In Defense of Haskell
 author: Forkk
-date: 1400258658000
+date: 1400355070000
 ---
 
-You may have heard of a little programming language called Haskell. In fact,
+You may have heard of a programming language called Haskell. In fact,
 you've probably heard people talk about it as if it were some scary complicated
 thing full of these incredibly weird concepts. Some may have even claimed you
 needed a degree in category theory to even begin to grasp some of the concepts
@@ -43,20 +43,20 @@ have no side effects. This means that no function in Haskell can access any
 variable other than its arguments.
 
 The concept of "no side effects" sounds silly at first, but when you consider
-functions mathematically, it makes complete sense. Mathematical functions don't
-touch outside values. In fact, all a function is is something that takes an input
+functions mathematically, it makes sense. Mathematical functions don't
+touch outside values. In fact, a function is just something that takes an input
 and produces a result based on the input. When you consider functions this way,
 suddenly, it makes sense. Functions *shouldn't* be able to take any outside input
 at all.
 
 In an imperative language, this concept would make no sense whatsoever. Why would
 you not allow my function, which needs to be able to *do something* to access
-things outside of what I've given it? In the beautiful mathematical world of Haskell,
+things outside of what I've given it? In the mathematical world of Haskell,
 though, it seems obvious that expressions shouldn't do anything outside of giving
-some result value.
+some result value based on their input.
 
-Speaking of result values, there's another thing that seems to confuse people
-sometimes. In Haskell, every single function will *always* return some value.
+Speaking of result values, another thing that seems to confuse people is the fact
+that, in Haskell, every single function will *always* return some value.
 Once again, this would seem odd in the imperative programming world. What about
 functions that print things to the terminal? What do they return? This seems
 like an arbitrary restriction.
